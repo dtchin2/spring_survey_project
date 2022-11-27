@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="dateFormat" class="java.text.SimpleDateFormat">
+        <constructor-arg value="yyyy-MM-dd"/>
+    </bean>
+
+    <bean id="surveyOne" class="com.dtchin2.survey.surveys.surveyOne.SurveyOne">
+        <property name="surveyId" value="100"></property>
+        <property name="surveyName" value="Supermarket Survey"></property>
+        <property name="surveyStartDate">
+            <bean factory-bean="dateFormat" factory-method="parse">
+                <constructor-arg  value="2022-10-30" />
+            </bean>
+        </property>
+        <property name="questionsList">
+            <list value-type="com.dtchin2.survey.questions.surveyOne.SurveyOneQuestionOne">
+                <ref bean="surveyOneQuestion1"/>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="surveyOneQuestion1" class="com.dtchin2.survey.questions.surveyOne.SurveyOneQuestionOne">
+        <property name="questionId" value="1001"></property>
+        <property name="surveyId" value="100"></property>
+        <property name="questionText" value="Overall Experience"></property>
+        <property name="questionType" value="MULTIPLE_CHOICE"></property>
+    </bean>
+
+</beans>
