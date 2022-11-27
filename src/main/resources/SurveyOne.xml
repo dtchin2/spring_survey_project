@@ -18,8 +18,9 @@
             </bean>
         </property>
         <property name="questionsList">
-            <list value-type="com.dtchin2.survey.questions.surveyOne.SurveyOneQuestionOne">
+            <list value-type="com.dtchin2.survey.questions.AbstractQuestion">
                 <ref bean="surveyOneQuestion1"/>
+                <ref bean="surveyOneQuestion2"/>
             </list>
         </property>
     </bean>
@@ -29,6 +30,25 @@
         <property name="surveyId" value="100"></property>
         <property name="questionText" value="Overall Experience"></property>
         <property name="questionType" value="MULTIPLE_CHOICE"></property>
+        <property name="answerOneText" value="Extremely Satisfied"></property>
+        <property name="answerTwoText" value="Satisfied"></property>
+        <property name="answerThreeText" value="Extremely Satisfied"></property>
+        <property name="answerFourText" value="Extremely Satisfied"></property>
     </bean>
 
+    <bean id="surveyOneQuestion2" class="com.dtchin2.survey.questions.surveyOne.SurveyOneQuestionTwo">
+        <property name="questionId" value="1002"></property>
+        <property name="surveyId" value="100"></property>
+        <property name="questionText" value="I Would Shop Here Again"></property>
+        <property name="questionType" value="TRUE_FALSE"></property>
+        <property name="answerOneText" value="TRUE"></property>
+        <property name="answerTwoText" value="FALSE"></property>
+    </bean>
+
+    <bean id="surveyOneQuestion3" class="com.dtchin2.survey.questions.surveyOne.SurveyOneQuestionTree">
+        <property name="questionId" value="1003"></property>
+        <property name="surveyId" value="100"></property>
+        <property name="questionText" value="My Overall Experience"></property>
+        <property name="answerOneText" value="Please Describe Your Experience"></property>
+    </bean>
 </beans>

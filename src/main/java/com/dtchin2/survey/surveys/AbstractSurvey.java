@@ -1,18 +1,18 @@
 package com.dtchin2.survey.surveys;
 
 import com.dtchin2.survey.entity.Survey;
-import com.dtchin2.survey.questions.QuestionInstance;
+import com.dtchin2.survey.questions.AbstractQuestion;
 
 import java.util.Date;
 import java.util.List;
 
-public abstract class SurveyInstance implements Survey {
+public abstract class AbstractSurvey implements Survey {
 
     private Integer surveyId;
     private String surveyName;
     private Date surveyStartDate;
 
-    private List<QuestionInstance> questionsList;
+    private List<AbstractQuestion> questionsList;
 
     public void setSurveyId(Integer surveyId) {
         this.surveyId = surveyId;
@@ -38,11 +38,11 @@ public abstract class SurveyInstance implements Survey {
         return surveyStartDate;
     }
 
-    public List<QuestionInstance> getQuestionsList() {
+    public List<AbstractQuestion> getQuestionsList() {
         return questionsList;
     }
 
-    public void setQuestionsList(List<QuestionInstance> questionsList) {
+    public void setQuestionsList(List<AbstractQuestion> questionsList) {
         this.questionsList = questionsList;
     }
 

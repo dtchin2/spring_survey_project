@@ -3,7 +3,7 @@ package com.dtchin2.survey.questions;
 import com.dtchin2.survey.base.QuestionType;
 import com.dtchin2.survey.entity.Question;
 
-public abstract class QuestionInstance implements Question {
+public abstract class AbstractQuestion implements Question {
 
     private Integer questionId;
     private Integer surveyId;
